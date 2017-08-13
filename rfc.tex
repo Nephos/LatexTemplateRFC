@@ -1,0 +1,128 @@
+\documentclass[10pt]{article}
+%\usepackage{showframe}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TO FILL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\rfcId}{I-D}
+\newcommand{\rfcTitle}{RFC Titlte}
+\newcommand{\rfcAuthor}{Arthur Poulet}
+\newcommand{\rfcDate}{August 2017}
+\newcommand{\rfcInstitution}{University of Kent}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% TABLE OF CONTENT
+%\usepackage{tocloft}
+%\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+%\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+%\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\contentsname}{Table of Content}
+% MARGINS
+\usepackage{geometry} % margin
+\geometry{
+	a4paper,
+	left=30mm,
+	top=30mm,
+	bottom=30mm,
+	right=30mm
+}
+%%% Custom headers/footers (fancyhdr package)
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[L]{RFC \rfcId}
+\fancyhead[C]{\rfcTitle}
+\fancyhead[R]{\rfcDate}
+\fancyfoot[L]{\rfcAuthor} % Empty
+\fancyfoot[C]{Standards Track} % Empty
+\fancyfoot[R]{[Page \thepage] \\} % Pagenumbering
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt}
+
+% SECTIONS
+\usepackage{ragged2e}
+\newcommand{\rfcSection}[2]{
+	\rfcNewPage
+	\vspace*{0.1in}
+	\section{#1}
+	{\narrower #2 \par}
+	\vfill
+}
+\newcommand{\rfcSubsection}[2]{
+\vspace*{0.1in}
+\subsection{#1}
+\vspace*{0.15in}
+{\narrower #2 \par}
+}
+\newcommand{\rfcSubsubsection}[2]{
+\vspace*{0.1in}
+\subsubsection{#1}
+\vspace*{0.1in}
+{\narrower #2 \par}
+}
+\newcommand{\rfcNewPage}{\hspace{6in}\newpage}
+% FIRST PAGE
+\usepackage{multicol}
+% FONT
+\usepackage{inconsolata}
+\renewcommand{\familydefault}{\ttdefault}
+
+\begin{document}
+
+\begin{multicols}{2}
+	\begin{flushleft}
+		Internet Engineering Task Force \\
+		INTERNET-DRAFT \rfcId
+	\end{flushleft}
+\columnbreak
+	\begin{flushright}
+		\rfcAuthor \\
+		\rfcInstitution \\
+		\rfcDate
+	\end{flushright}
+\end{multicols}
+
+\vspace{1in} { \center \rfcTitle \\ } \vspace{1in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TO FILL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+  blahblah...
+\end{abstract}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\rfcNewPage
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% TO FILL %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\justify
+\rfcSection{Introduction}{
+	\paragraph{}
+  Blahblah
+
+	\rfcSubsection{Goals}{
+		\paragraph{}
+    Blahblah
+}
+
+\rfcSection{Terminology}{
+  \paragraph{}
+  In this document, the key words "MUST", "MUST NOT", "REQUIRED",
+   "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY",
+   and "OPTIONAL" are to be interpreted as described in BCP 14, RFC 2119
+   [RFC2119].
+	\paragraph{stuff} Todo
+}
+
+\rfcSection{Protocol Overview}{
+\paragraph{}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
